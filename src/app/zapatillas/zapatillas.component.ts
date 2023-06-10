@@ -1,5 +1,6 @@
 import { Component, OnInit } from "@angular/core";
 import { Zapatillas } from "../models/zapatilla";
+import { EVENT_MANAGER_PLUGINS } from "@angular/platform-browser";
 
 @Component({
     selector: 'zapatillas',
@@ -9,6 +10,8 @@ export class ZapatillasComponent implements OnInit {
     public titulo: string = "Componente de Zapatillas ;)";
     public zapatillas: Array<Zapatillas>;
     public marcas: String[];
+    public color: string;
+    public mi_marca: string;
 
     constructor(){
         this.zapatillas = [
@@ -18,6 +21,8 @@ export class ZapatillasComponent implements OnInit {
             new Zapatillas('Adidas Yezzy', 'Adidas', 'Gris',180,false)
         ];
         this.marcas = new Array();
+        this.color = 'yellow';
+        this.mi_marca = 'Fila';
     }    
 
     ngOnInit(): void {
@@ -37,5 +42,25 @@ export class ZapatillasComponent implements OnInit {
         console.log(this.marcas);
     }
 
+    getMarca(): void{
+        alert(this.mi_marca);
+    }
+
+    addMarca(): void{
+        this.marcas.push(this.mi_marca);
+    }
+
+    borrarMarca(indice: number):void{
+        //delete this.marcas[indice];
+        this.marcas.splice(indice, 1);
+    }
+
+    onBlur(): void{
+        console.log('Has salido del input');
+    }
+
+    mostrarPalabra(): void{
+        alert(this.mi_marca);
+    }
 
 }
