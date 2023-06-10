@@ -1,6 +1,22 @@
 <h2>{{titulo}}</h2>
+<p>
+    Compra las zapatillas de las mejores marcas</p>
+    <ul>
+        <li *ngFor="let marca of marcas; let indice = index"> {{indice + ' ' + marca}}  </li>
+    </ul>
+<p>Las deportivas que tenemos disponibles son las siguientes: </p>
 <ul>
-    <li>Reebook Classic</li>
-    <li>Fila Retro</li>
-    <li>Adidas Yezzy</li>
-</ul>
+    <li *ngFor="let deportiva of zapatillas"> 
+        
+        <span [ngStyle]="{
+            'text-decoration': !deportiva.stock ? 'line-through' : 'none'
+        }"> {{deportiva.nombre}} - <strong>{{deportiva.precio}}</strong> 
+        </span>
+        
+        <span *ngIf="deportiva.precio < 80" 
+            [style.background]="deportiva.precio < 80 ? 'green': 'transparent' "
+            [style.color]="deportiva.precio < 80 ? 'white': 'black' " > ¡En Oferta!
+        </span>
+    </li>
+    
+</ul>   
