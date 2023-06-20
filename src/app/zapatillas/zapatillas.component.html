@@ -5,7 +5,7 @@
 <p>
 
 <!--<input type="text" [(ngModel)]="mi_marca" (blur)="onBlur()" />-->
-<input type="text" [(ngModel)]="mi_marca" (keyup.enter)="mostrarPalabra()" />
+<input type="text" [(ngModel)]="mi_marca" (keyup.enter)="mostrarPalabra()" /> <!--Es más interesante capturar la tecla enter-->
 
 <button (click)="getMarca()" >Mostrar Marca</button>
 <button (click)="addMarca()" >Añadir Marca</button>
@@ -31,8 +31,20 @@
     <li *ngFor="let deportiva of zapatillas"> 
         
         <span [ngStyle]="{
-            'text-decoration': !deportiva.stock ? 'line-through' : 'none'
-        }"> {{deportiva.nombre}} - <strong>{{deportiva.precio}}</strong> 
+                            'text-decoration': !deportiva.stock ? 'line-through' : 'none'
+                        }"> 
+
+            {{deportiva.nombre}} - 
+            
+            <strong [class.AltoPrecio]="deportiva.precio >= 80"
+                    [ngClass]="{
+                                'fondoRojo': deportiva.precio > 100,
+                                'subrayado' : deportiva.marca == 'Nike'
+                            }"
+            >
+                
+                        {{deportiva.precio}}$
+            </strong> 
         </span>
         
         <span   *ngIf="deportiva.precio < 80" 
