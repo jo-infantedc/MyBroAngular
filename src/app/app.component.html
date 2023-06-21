@@ -11,6 +11,17 @@
     {{ description }}
   </p>
 
+  <nav>
+    <a [routerLink]="['/']" >Home</a>
+    &nbsp;
+    <a [routerLink]="['/zapatillas']" >Zapatillas</a>
+    &nbsp;
+    <a [routerLink]="['/cursos']" >Cursos</a>
+    &nbsp;
+    <a [routerLink]="['/videojuego']" >Videojuego</a>
+  </nav>
+
+  <!--
   <button (click)="ocultarMostrarVideojuegos(false)" *ngIf="mostrar_videojuegos">Ocultar</button>
   <button (click)="ocultarMostrarVideojuegos(true)" *ngIf="!mostrar_videojuegos">Mostrar</button>
   
@@ -18,4 +29,8 @@
   <videojuego *ngIf="mostrar_videojuegos" ></videojuego>
   <zapatillas></zapatillas>
   <app-cursos></app-cursos>
+  -->
+
+  <!--Routeo-->
+  <router-outlet></router-outlet>
 </div>
