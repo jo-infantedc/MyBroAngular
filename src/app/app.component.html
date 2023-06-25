@@ -12,15 +12,16 @@
   </p>
 
   <nav>
-    <a [routerLink]="['/']" >Home</a>
+    <a [routerLink]="['/home']" [routerLinkActive]="['active']" >Home</a>
     &nbsp;
-    <a [routerLink]="['/zapatillas']" >Zapatillas</a>
+    <a [routerLink]="['/zapatillas']" [routerLinkActive]="['active']">Zapatillas</a>
     &nbsp;
-    <a [routerLink]="['/cursos']" >Cursos</a>
+    <a [routerLink]="['/cursos']" [routerLinkActive]="['active']">Cursos</a>
     &nbsp;
-    <a [routerLink]="['/videojuego']" >Videojuego</a>
+    <a [routerLink]="['/videojuego']" [routerLinkActive]="['active']">Videojuego</a>
   </nav>
 
+  <hr/>
   <!--
   <button (click)="ocultarMostrarVideojuegos(false)" *ngIf="mostrar_videojuegos">Ocultar</button>
   <button (click)="ocultarMostrarVideojuegos(true)" *ngIf="!mostrar_videojuegos">Mostrar</button>
