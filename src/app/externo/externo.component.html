@@ -1,0 +1,10 @@
+<input type="text" [(ngModel)]="userId" (keyup.enter)="cargaUsuario()"/>
+
+<div *ngIf="!user">
+    Cargando... <!--Puede ser sustituido por un gif o lo que fuese-->
+</div>
+
+<div *ngIf="user">
+    <img src="{{user.avatar}}" width="200" />
+    <h2>{{user.first_name + user.last_name}}</h2>
+</div>

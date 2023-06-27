@@ -1,4 +1,4 @@
-export class Zapatillas{
+export class Zapatilla{
    
     /* //Esta es la forma más larga
     public nombre: string;
