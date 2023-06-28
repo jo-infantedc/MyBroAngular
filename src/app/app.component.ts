@@ -18,7 +18,7 @@ export class AppComponent {
     this.title = Configuracion.titulo;
     this.description = Configuracion.descripcion;
     this.color = Configuracion.fondo;
-    this.componentConfig = Component;
+    this.componentConfig = Configuracion;
   }
 
 
