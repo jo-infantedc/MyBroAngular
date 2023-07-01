@@ -27,6 +27,7 @@ export class ExternoComponent implements OnInit {
     this._peticionesService.getUser(this.userId).subscribe(
       result => {
         this.user = result.data;
+        //console.log(result);
       },
       error => {
         console.log(<any>error);
