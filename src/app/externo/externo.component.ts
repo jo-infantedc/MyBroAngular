@@ -49,6 +49,7 @@ export class ExternoComponent implements OnInit {
   onSubmit(form:Form){
     this._peticionesService.addUser(this.new_user).subscribe(
       response => {
+        
         this.usuario_guardado = response;
       },
       error => {
