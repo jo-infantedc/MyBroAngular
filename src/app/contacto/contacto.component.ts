@@ -1,5 +1,6 @@
 import { Component, OnInit } from '@angular/core';
 import { ContactoUsuario } from '../models/contacto.usuario';
+import { Form } from '@angular/forms';
 
 @Component({
   selector: 'app-contacto',
@@ -17,9 +18,10 @@ export class ContactoComponent implements OnInit {
     
   }
 
-  onSubmit(): void{
+  onSubmit(form:any): void{
     console.log("Evento Submit Lanzado");
     console.log(this.usuario);
+    //form.reset();
   }
 
 }
